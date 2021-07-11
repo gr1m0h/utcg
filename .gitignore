@@ -1,4 +1,6 @@
 # Binaries for programs and plugins
+utcg
+*.tar.gz
 *.exe
 *.exe~
 *.dll
