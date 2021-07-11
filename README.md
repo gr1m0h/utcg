@@ -1,2 +1,2 @@
-# utc
-utc ( UNIX Time Stamp Converter for Go)
+# utcg
+utcg is a UNIX time stamp converter using Go.
