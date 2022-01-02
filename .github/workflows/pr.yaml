@@ -2,8 +2,7 @@ name: Run go build
 on:
   pull_request:
     branches:
-      - dev
-      - master
+      - main
 jobs:
   build:
     name: Build
