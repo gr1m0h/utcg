@@ -16,7 +16,7 @@ var jstSubCmd = &cobra.Command{
 		if len(args) != 1 {
 			return fmt.Errorf("expected 1 arg.")
 		}
-		return convert(args[0])
+		return convert(args[0], c)
 	},
 }
 
@@ -24,12 +24,12 @@ func init() {
 	rootCmd.AddCommand(jstSubCmd)
 }
 
-func convert(ut string) error {
+func convert(ut string, c *cobra.Command) error {
 	i, err := strconv.ParseInt(ut, 10, 64)
 	if err != nil {
 		return errors.New("invalid syntax")
 	}
-	nano, _ := cmd.Flags().GetString("nano")
+	nano, _ := c.Flags().GetString("nano")
 	if nano != "" {
 		fmt.Println(time.Unix(i/1000000000, i%1000000000))
 	} else {
