@@ -29,6 +29,11 @@ func convert(ut string) error {
 	if err != nil {
 		return errors.New("invalid syntax")
 	}
-	fmt.Println(time.Unix(i, 0))
+	nano, _ := cmd.Flags().GetString("nano")
+	if nano != "" {
+		fmt.Println(time.Unix(i/1000000000, i%1000000000))
+	} else {
+		fmt.Println(time.Unix(i, 0))
+	}
 	return nil
 }
